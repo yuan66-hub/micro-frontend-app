@@ -1,0 +1,21 @@
+{
+  "name": "micro-footend-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./build/run.js",
+    "install": "node ./build/init.js"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@yuanjianming/micro-frontend-app": "workspace:^"
+  },
+  "engines": {
+     "node":">=18.18.0"
+  }
+}
