@@ -1,6 +1,6 @@
 {
   "name": "@yuanjianming/micro-frontend-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.ts",
   "module": "dist/es/index.js",
@@ -13,12 +13,18 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuan66-hub/micro-frontend-app.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "micro-frontend"
+  ],
+  "author": "yuanjianming",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-strip": "^3.0.4",

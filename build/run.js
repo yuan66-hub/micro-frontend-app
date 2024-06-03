@@ -1,14 +1,10 @@
-const childProcess = require('child_process')
 
 const filePath = require('./filePath')
-
+const runShell = require('./util').runShell
 
 function runBuild(){
      Object.keys(filePath).forEach(item=>{
-          childProcess.spawn(`cd ${filePath[item]} && npm start`,{
-              stdio:'inherit',
-              shell:true
-          })
+          runShell(`cd ${filePath[item]} && npm start`)
      })
 }
 
