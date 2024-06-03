@@ -1,0 +1,9 @@
+[submodule "main-vue2"]
+	path = main-vue2
+	url = git@github.com:yuan66-hub/main-vue2.git
+[submodule "sub-react18"]
+	path = sub-react18
+	url = git@github.com:yuan66-hub/sub-react18.git
+[submodule "sub-vue3"]
+	path = sub-vue3
+	url = git@github.com:yuan66-hub/sub-vue3.git
