@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./build/run.js",
-    "install": "node ./build/init.js"
-
+    "install": "node ./build/init.js",
+    "build":"node ./build/platform.js"
   },
   "keywords": [],
   "author": "",

@@ -2,14 +2,18 @@
 import { sandbox } from '../sandbox/index';
 import { IAppInfo, IInternalAppInfo } from '../types/index';
 import { findAppByName, fetchUrl } from '../utils/index';
+import LRUCache from '../utils/cache';
 
-
+interface ILRUCache<K, V> {
+  get: (key: K) => V | number
+  put: (key: K, value: V) => void
+}
 // 缓存子应用
-const cache: Map<string, any[]> = new Map();
+const cache: ILRUCache<string, any[]> = new LRUCache(10);
 
 // 解析html
 export const parseHtml = async (url: string, appName: string): Promise<any[]> => {
-  if (cache.has(appName)) {
+  if (cache.get(appName) !== -1) {
     return cache.get(appName) as any[];
   }
   const div: Element = document.createElement('div');
@@ -20,7 +24,7 @@ export const parseHtml = async (url: string, appName: string): Promise<any[]> =>
   const fetchedScript: string[] = await Promise.all(scriptUrls.map(url => fetchUrl(url)));
   scriptsArray = scripts.concat(fetchedScript);
 
-  cache.set(appName, [elements, scriptsArray])
+  cache.put(appName, [elements, scriptsArray])
 
   return [elements, scriptsArray];
 }
